@@ -1,6 +1,25 @@
-SELECT * from job_postings_fact
-ORDER BY  job_title
-limit 100
+/*
+Question: What are the top-paying data analyst jobs?
+Identify the top 10 highest-paying Data Analyst roles that are available in New York.
+Focuses on job postings with specified salaries (remove nulls).
+- Why? High Light the top-paying opportunities for Data Analysts, offering insights into emp
+*/
 
--- testing if updates show up, and some more. im learning! is this really how u do it everytime????
--- am i doing this correctly?
+SELECT
+    job_id,
+    job_title,
+    job_location,
+    job_schedule_type,
+    salary_year_avg,
+    job_posted_date,
+    name AS company_name
+FROM
+    job_postings_fact
+LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id -- joins by company id to get name of company
+WHERE
+    job_title_short = 'Data Analyst' AND
+    job_location = 'New York' AND
+    salary_year_avg IS NOT NULL
+ORDER BY
+    salary_year_avg DESC
+LIMIT 10
