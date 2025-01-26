@@ -10,7 +10,7 @@ The tech industry is constantly evolving, and staying competitive requires a kee
 
 ## Tools I Used
 
-* **Data Source:** Job postings data from Luke Barrouse
+* **Data Source:** Job postings data from [Luke Barrouse](https://www.lukebarousse.com/sql)
 * **SQL:** For querying and analyzing the data using PostgreSQL.
 * **VS Code:** As my code editor for writing and executing SQL queries.
 
